@@ -8,4 +8,4 @@ Here's a preview of the application:
 
 ![Completed application - one column search results, second column search details](9yB5AM9sBgVwfTR.png)
 
-The step-by-step guide can be found at [https://codelabs.developers.google.com/introduction-to-angular](https://codelabs.developers.google.com/introduction-to-angular)
+The step-by-step guide can be found at [https://codelabs.developers.google.com/introduction-to-angular](https://codelabs.developers.google.com/introduction-to-angular)# angular_fairhouse
