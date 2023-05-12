@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { HousingListService } from '../housing-list.service';
 import { HousingLocation } from '../housing-location';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-housing-list',
@@ -8,14 +10,22 @@ import { HousingLocation } from '../housing-location';
 })
 export class HousingListComponent implements OnInit {
 
-  @Input() locationList: HousingLocation[] = [];
+  private locationList: HousingLocation[] = [];
   results: HousingLocation[] = [];
 
   @Output() locationSelectedEvent = new EventEmitter<HousingLocation>();
 
-  constructor() { }
+  constructor(private housingListService: HousingListService,private router: Router)
+   {
+   }
+
+   getHousingLocationList()
+   {
+     return this.locationList;
+   }
 
   ngOnInit(): void {
+    this.locationList = this.housingListService.getHousingLocationList();
   }
 
   searchHousingLocations(searchText: string) {
@@ -25,6 +35,7 @@ export class HousingListComponent implements OnInit {
   }
 
   selectHousingLocation(location: HousingLocation) {
-    this.locationSelectedEvent.emit(location);
+    // this.locationSelectedEvent.emit(location);
+    this.router.navigate(['/housingDetails', { selectedLocationName : location.name}]);
   }
 }
