@@ -49,8 +49,8 @@ export class AppComponent {
   selectedLocation: HousingLocation | undefined;// = this.housingLocationList[0];
 
   updateSelectedLocation(location: HousingLocation) {
-    this.selectedLocation = location;
-    this.router.navigate(['/housingDetails', { locationName : location.name}]);
+    // this.selectedLocation = location;
+    // this.router.navigateByUrl("/housingDetails/locationName/ { locationName : location.name}");
     
   }
 }

@@ -36,6 +36,7 @@ export class HousingListComponent implements OnInit {
 
   selectHousingLocation(location: HousingLocation) {
     // this.locationSelectedEvent.emit(location);
-    this.router.navigate(['/housingDetails', { selectedLocationName : location.name}]);
+    // this.router.navigate(['/housingDetails', { selectedLocationName : location.name}]);
+    this.router.navigateByUrl("/housingDetails/locationName/ { locationName : location.name}");
   }
 }
