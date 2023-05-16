@@ -25,7 +25,10 @@ export class HousingListComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.locationList = this.housingListService.getHousingLocationList();
+    this.housingListService.getHousingLocationList().then((housingLocationList: HousingLocation[]) => {
+    this.locationList = housingLocationList;
+    this.results = housingLocationList;
+  });
   }
 
   searchHousingLocations(searchText: string) {
